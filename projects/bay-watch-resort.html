@@ -42,6 +42,9 @@
     .ico{width:16px;height:16px;flex:none;margin-right:8px}.linkedin{background:#0a66c2;color:#fff;border:1px solid #0a66c2}.nav-social{display:inline-flex;align-items:center;color:#dce5f3}.nav-social .ico{width:20px;height:20px;margin:0}.nav-social:hover{color:#4aa3f0}
     @media(max-width:800px){.facts-grid{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}.value-grid{grid-template-columns:1fr}.duties{grid-template-columns:1fr}}
     @media(max-width:520px){.facts-grid{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}.cs-actions .btn{width:100%}.cs .lead-card{padding:22px}}
+    .cs-hero.has-cover{background-size:cover;background-position:center}
+    .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}.gallery-grid a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--pale);aspect-ratio:16/9}.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}.gallery-grid a:hover img{transform:scale(1.04)}
+    @media(max-width:520px){.gallery-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -52,8 +55,19 @@
   <section><div class="wrap"><div class="section-kicker">Project Scope</div><h2 class="section-title">Overview</h2><div class="lead-card"><p>Construction of 5 STAR “BAY WATCH RESORT” (10 Storied with One Basement Including Rooftop Sky Restaurant) at Inani, Cox's Bazar.</p></div></div></section>
   <section style="padding-top:0"><div class="wrap"><div class="section-kicker">Project Value</div><h2 class="section-title">Contract Value</h2><div class="value-grid"><div class="value"><small>Phase 1 (16 Items)</small><strong>BDT 2,341,738,944.51</strong></div><div class="value"><small>Phase 2</small><strong>BDT 715,097,950.86</strong></div><div class="value total"><small>Total (Phase 1 + Phase 2)</small><strong>BDT 3,056,836,895.37</strong></div></div><p class="note">The total is the sum of the Phase 1 and Phase 2 values above.</p></div></section>
   <section style="padding-top:0"><div class="wrap"><div class="section-kicker">My Role</div><h2 class="section-title">Quantity Surveying Role</h2><p class="section-lead">Bay Watch Resort is one of the key projects in my experience as Quantity Surveyor in the Billing &amp; Tender Department of Property Development Ltd. (PDL), PRAN-RFL Group (July 2022 – Present).</p><p class="section-lead" style="margin-top:14px">My responsibilities in this role, as listed in my CV, include:</p><ul class="duties"><li>Project cost estimation and cost management (structural, finishing and steel works)</li><li>Bill of Quantities (BOQ) preparation and quantity takeoff from drawings</li><li>Variation preparation, variation orders and final settlement</li><li>Working cost preparation for tender</li><li>Rate analysis as per PWD, MES, LGED and BNBC standards</li><li>Subcontractor and client bills (RA, IPC and final bills)</li><li>Project cost control and budgeting</li><li>Coordination with design, planning, procurement and site teams</li></ul><div class="cs-actions"><a class="btn primary" href="../index.html#projects">← Back to Projects</a><a class="btn outline-dark" href="../index.html#contact">Get in Touch</a><a class="btn linkedin" href="https://www.linkedin.com/in/shourovmon" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>View LinkedIn Profile</a></div></div></section>
+  <section id="gallery" hidden style="padding-top:0"><div class="wrap"><div class="section-kicker">Gallery</div><h2 class="section-title">Project Photos</h2><div class="gallery-grid" id="gallery-grid"></div></div></section>
 </main>
 <footer><div class="wrap footer-row"><span>© <span id="year"></span> Abdullah Al Shourov. All rights reserved.</span><span>Professional Portfolio · Civil Engineering &amp; Quantity Surveying</span></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();const b=document.getElementById('menubtn'),n=document.getElementById('navlinks');b.addEventListener('click',()=>n.classList.toggle('open'));n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')));</script>
+<script>
+(function(){
+  var base='images/';
+  // Cover banner (optional): images/bay-watch-cover.jpg
+  var c=new Image();c.onload=function(){var el=document.querySelector('.cs-hero');el.classList.add('has-cover');el.style.backgroundImage='linear-gradient(rgba(16,29,50,.68),rgba(16,29,50,.68)),url('+base+'bay-watch-cover.jpg)';};c.src=base+'bay-watch-cover.jpg';
+  // Gallery (optional): images/bay-watch-1.jpg ... bay-watch-12.jpg
+  var grid=document.getElementById('gallery-grid'),sec=document.getElementById('gallery');
+  for(var i=1;i<=12;i++){(function(n){var src=base+'bay-watch-'+n+'.jpg';var im=new Image();im.onload=function(){var a=document.createElement('a');a.href=src;a.target='_blank';a.rel='noopener';a.style.order=n;im.alt='Bay Watch Resort photo '+n;im.loading='lazy';a.appendChild(im);grid.appendChild(a);sec.hidden=false;};im.src=src;})(i);}
+})();
+</script>
 </body>
 </html>
